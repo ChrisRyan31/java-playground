@@ -22,3 +22,12 @@ wrapper {
     gradleVersion = '6.5'
     distributionType = Wrapper.DistributionType.BIN
 }
+
+jar {
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'com.galvanize.Application'
+        )
+    }
+}

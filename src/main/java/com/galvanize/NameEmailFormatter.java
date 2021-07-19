@@ -1,0 +1,20 @@
+package com.galvanize;
+
+public class NameEmailFormatter {
+
+    public static void main(String[] args) {
+
+        if (args.length == 1) {
+            System.out.println(String.format("Please specify an email for %s", args[0]));
+        }
+
+        if (args.length == 0) {
+            System.out.println("Please specify a name and email");
+        }
+
+        if (args.length >= 2) {
+            System.out.println(String.format("%s <%s>", args[0], args[1]));
+        }
+
+    }
+}
